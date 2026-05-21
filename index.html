@@ -13,13 +13,18 @@
 </head>
 
 
+
 <script>
-setInterval(() => {
-  const chat = document.body;
-  window.scrollTo(0, chat.scrollHeight);
-}, 500);
+const observer = new MutationObserver(() => {
+  window.scrollTo(0, document.body.scrollHeight);
+});
+
+observer.observe(document.body, {
+  childList: true,
+  subtree: true
+});
 </script>
-``
+
 
 	
 <body>
